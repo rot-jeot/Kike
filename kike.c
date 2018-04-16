@@ -46,24 +46,24 @@ int main ()
 
 	do{
 
-    printf("\nOpciones:\n1 Insertar nueva canción\n2 Eliminar canción\n3 Modo de Reproducción\n4 Salir\n\nDame una opcion: ");
+    printf("\nOpciones:\n1 Insertar nueva canciÃ³n\n2 Eliminar canciÃ³n\n3 Modo de ReproducciÃ³n\n4 Salir\n\nDame una opcion: ");
     scanf("%d",&OpcionMenu);
 
 		if(OpcionMenu==1){
 
 
-            printf("Ingresa el nombre de la canción: ");
+            printf("Ingresa el nombre de la canciÃ³n: ");
             scanf("%s", cancion);
 
 
             if(Insertar(l,cancion)==1)
             {
-                printf("\nSe puso la canción %s en la cabeza de la lista",cancion);
+                printf("\nSe puso la canciÃ³n %s en la cabeza de la lista",cancion);
 
             }
             else
             {
-                printf("\nNo se agrego la canción %s porque la lista esta llena",cancion);
+                printf("\nNo se agrego la canciÃ³n %s porque la lista esta llena",cancion);
             }
             Muestra(l);
         }
@@ -73,11 +73,11 @@ int main ()
             cancion[TAM]=*Eliminar(l);
             if(cancion[TAM]!='\0')
             {
-                printf("\nSe eliminó la canción %s de la cabeza de la lista",cancion[TAM]);
+                printf("\nSe eliminÃ³ la canciÃ³n %s de la cabeza de la lista",cancion[TAM]);
             }
             else
             {
-                printf("\nNo se sacó ningun elemento de la lista porque esta vacia");
+                printf("\nNo se sacÃ³ ningun elemento de la lista porque esta vacia");
             }
             Muestra(l);
         }
@@ -93,7 +93,7 @@ void Muestra(struct LISTA *lista)
      struct NODO *actual;
     if(lista->Head==NULL && lista->Tail==NULL)
     {
-        printf("\nLista de reproducción vacia\n");//no tiene elementos
+        printf("\nLista de reproducciÃ³n vacia\n");//no tiene elementos
         return;
     }
     actual=lista->Tail;
@@ -150,11 +150,9 @@ int Insertar(struct LISTA *lista, char *a)
         }
 
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 //Quita el elemento de la lista
-//Si tiene Ã©xito devuelve el valor que estaba en la cabeza, de lo contrario regresa null
+//Si tiene ÃƒÂ©xito devuelve el valor que estaba en la cabeza, de lo contrario regresa null
 char *Eliminar(struct LISTA *lista)
 {
     if(lista->Head!=NULL)
@@ -175,7 +173,7 @@ char *Eliminar(struct LISTA *lista)
 
             lista->Tail->siguiente=lista->Head;
 
-            //Libera el espacio del dato que se sacó de la lista
+            //Libera el espacio del dato que se sacÃ³ de la lista
             free(stTemporal);
 
             return ctemporal;
@@ -186,13 +184,7 @@ char *Eliminar(struct LISTA *lista)
         return '\0';
     }
 }
-
 void Modo(struct LISTA *lista)
 {
 	printf("Reproduciendo: %s",lista->Head->nombre);
-
 }
-
-
-
-
