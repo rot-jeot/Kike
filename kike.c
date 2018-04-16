@@ -96,7 +96,7 @@ void Muestra(struct LISTA *lista)
         printf("\nLista de reproducción vacia\n");//no tiene elementos
         return;
     }
-    actual=lista->Tail;
+     actual=lista->Head;
     if(lista->Head == lista->Tail)//Cuando es de un solo elemento
     {
         printf("\n Por reproducir: ");
@@ -109,9 +109,7 @@ void Muestra(struct LISTA *lista)
             printf("%s",actual->nombre);
             actual=actual->siguiente;
     }
-    while(actual!=lista->Head);
-
-
+    while(actual!=lista->Tail);
         printf("\n");
     }
 
